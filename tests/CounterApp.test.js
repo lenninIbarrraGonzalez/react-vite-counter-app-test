@@ -14,7 +14,7 @@ describe('Pruebas en <CounterApp>', () => {
         //screen.debug();
         expect(screen.getByText(100)).toBeTruthy();
         // probando que el 100 este en un h2
-        // expect(screen.getByRole('heading',{level:2}).innerHTML).toContain('100');
+        expect(screen.getByRole('heading',{level:2}).innerHTML).toContain('100');
     });
 
     test('debe de incrementar con el boton +1', () => {

@@ -1,10 +1,10 @@
 import { getByTestId, render, screen } from '@testing-library/react';
 import { FirstApp } from '../src/FirstApp';
 
-
+//Esta es la fomra como se deben hacer la pruebas
 describe('Pruebas en <FirstApp2 />', () => {
     const title    = 'Este es mi titulo';
-    const subTitle = 'Pruebas con jest'
+    const subTitle = 'Subtitlo enviado desde las props'
 
     test('debe hacer match con el snapshot', () => {
         const {container} = render(<FirstApp title={title}/>);
@@ -30,6 +30,6 @@ describe('Pruebas en <FirstApp2 />', () => {
             title={title}
             subTitle={subTitle}
         />);
-        expect(screen.getAllByText(subTitle).length).toBe(2);
+        expect(screen.getAllByText(subTitle).length).toBe(1);
     });
 });

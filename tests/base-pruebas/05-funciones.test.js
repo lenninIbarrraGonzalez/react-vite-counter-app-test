@@ -12,6 +12,7 @@ describe('Pruebas en 05-funciones', () => {
         //2. estimulo
         const user = getUser();
          //3 observara el comportamiento
+         //toEqual sirve para evaluar objetos
         expect( testUser ).toEqual( user );
 
     });
@@ -23,6 +24,7 @@ describe('Pruebas en 05-funciones', () => {
          //2. Estimulo
         const user = getUsuarioActivo( name );
         //3. observar el comportamiento
+        //toEqual sirve para evaluar objetos
         expect( user ).toStrictEqual({
             uid: 'ABC567',
             username: name

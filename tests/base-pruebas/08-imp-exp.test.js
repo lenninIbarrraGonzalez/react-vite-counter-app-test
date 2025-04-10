@@ -8,15 +8,20 @@ describe('Pruebas en 08-imp-exp', () => {
         
         const id = 1;
         const hero = getHeroeById( id );
-        
-        expect( hero ).toEqual({ id: 1, name: 'Batman', owner: 'DC' });
+        //console.log(hero);
+        expect( hero ).toEqual(
+            {   id: 1, 
+                name: 'Batman', 
+                owner: 'DC' 
+            }
+        );
     });
 
     test('getHeroeById debe de retornar undefined si no existe', () => {
         
         const id = 100;
         const hero = getHeroeById( id );
-       //console.log(hero);
+        //console.log(hero);
         //expect(hero).toBe(undefined);
         //puedo utilizar la forma corta para probar que es falso
         expect(hero).toBeFalsy();
@@ -29,17 +34,19 @@ describe('Pruebas en 08-imp-exp', () => {
          //1.inicializando
         const owner = 'DC';
         //2.Estimulando
-        const heroes = getHeroesByOwner( owner );
+        const heroes2 = getHeroesByOwner( owner );
          //console.log(heroes);
         //3.Observar el comportamiento
-        //expect(heroes.length).toBe(3);
+        expect(heroes2.length).toBe(3);
         //probando de forma flexible con una data de pruebas
-        expect( heroes ).toEqual([
+        expect( heroes2 ).toEqual([
             { id: 1, name: 'Batman', owner: 'DC' },
             { id: 3, name: 'Superman', owner: 'DC' },
             { id: 4, name: 'Flash', owner: 'DC' }
         ]);
-        expect( heroes ).toEqual( heroes.filter( (heroe) => heroe.owner === owner ) )
+        
+        //heroes es la data de prueba
+        expect( heroes2 ).toEqual( heroes.filter( (heroe) => heroe.owner === owner ) )
 
 
     });
